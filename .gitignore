@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# File extensions
+*.csv
+*.xml
+
+# Folder extensions
+**/FinancialStatementDirectory

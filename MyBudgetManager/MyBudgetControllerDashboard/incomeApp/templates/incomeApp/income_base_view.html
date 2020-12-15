@@ -1,0 +1,23 @@
+{% extends 'incomeApp/base.html' %} 
+{% block content %}  
+    {% comment %} <div class="income"> {% endcomment %}
+      {% comment %} <span> EDIT HERE: <a class="btn btn-default" href="{% url 'income_edit' pk=income.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></span> {% endcomment %}
+      {% comment %} <a class="btn btn-default" href="{% url 'income_edit' pk=income.pk %}">
+        <span class="glyphicon glyphicon-pencil">Edit</span>
+      </a> {% endcomment %}
+      {% comment %} <h1>{{ income.description }}</h1>
+      <p>Registration date: {{ income.registrationDate }}</p>
+      <p>Date of payment: {{ income.dateOfPayment }}</p>
+      <p>Amount: {{ income.amount }}</p>
+      <p>Description: {{ income.description }}</p>
+      <p>Category: {{ income.category }}</p>
+    </div> {% endcomment %}
+
+    <div>
+        {% comment %} <img src="{% static 'images/Summary_logo.png' %}" width="30" height="30" alt=""> {% endcomment %}
+        <h1>This is heading 1</h1>
+    </div>
+
+
+
+{% endblock %}

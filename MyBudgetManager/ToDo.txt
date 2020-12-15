@@ -1,0 +1,38 @@
+8) Fájl olvasás és adatbázisba importálás. (https://realpython.com/python-csv/)
+    8.1) XML parsinggal továbbmenni. (https://docs.python.org/3.7/library/xml.etree.elementtree.html - http://convertcsv.com/csv-to-xml.htm )   
+    8.3) Csv fájl xml-é konvertálhatóvá tenni.
+        8.3.1) Az elejét levágni.
+        8.3.2) A tag-eket olhashatóvá tenni.
+        8.3.3) A row-nak adni valahogy indexet.
+        8.3.4) Úgy strukturálni a csv fájlt, hogy azt szépen tagolt xml-é alakítsuk.
+        8.3.5) XML convertálást automatizálni.
+9) UI-ra csinálni egy beviteli lehetőséget a "magic word"-okre, amivel azonosítani lehet a beolvasott bankszla kivonatokról a költség kategóriákat.
+10) 
+
+
+
+YUML wiki: https://github.com/jaime-olivares/yuml-diagram/wiki
+YUML VS Code: https://marketplace.visualstudio.com/items?itemName=JaimeOlivares.yuml
+
+JÓ DASH BOAR MINTA:
+https://startbootstrap.com/themes/sb-admin-2/
+https://startbootstrap.com/previews/sb-admin-2/
+
+
+
+https://codepen.io/lelea2/pen/oxJMLN
+
+Szűrés:
+1) models.py -> class TestResultQuerySet(models.QuerySet)
+2) models.py -> objects = TestResultQuerySet.as_manager()
+
+
+
+
+
+
+
+
+    
+
+

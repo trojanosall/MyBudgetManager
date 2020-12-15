@@ -1,0 +1,96 @@
+{% extends 'incomeApp/base.html' %} 
+{% block content %} 
+  {% comment %} {% for income in incomes %}
+    <div class="income">
+      <div class="date">
+        {{ income.dateOfPayment }}
+      </div>
+      <h1><a href="{% url 'income_detail' pk=income.pk %}">{{ income.description }}</a></h1>
+      <p>Registration date: {{ income.registrationDate }}</p>
+      <p>Date of payment: {{ income.dateOfPayment }}</p>
+      <p>Amount: {{ income.amount }}</p>
+      <p>Description: {{ income.description }}</p>
+      <p>Category: {{ income.category }}</p>
+    </div>    
+  {% endfor %} {% endcomment %}  
+    {% comment %} <div class="incomes_list">
+      <table>
+        <tr>
+          <th>Registration date</th>
+          <th>Date of payment</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Category</th>
+        </tr>
+        {% for income in incomes %}
+          <tr>
+            <td>{{ income.registrationDate }}</td>
+            <td>{{ income.dateOfPayment }}</td>
+            <td>{{ income.amount }}</td>
+            <td><a href="{% url 'income_detail' pk=income.pk %}">{{ income.description }}</a></td>
+            <td>{{ income.category }}</td>
+          </tr>
+        {% endfor %}    
+      </table> {% endcomment %}
+
+      <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">INCOMES</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>REGISTRATION DATE</th>
+                      <th>DATE OF PAYMENT</th>
+                      <th>AMOUNT</th>
+                      <th>DESCRIPTION</th>
+                      <th>CATEGORY</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for income in incomes %}
+                    <tr>
+                      <td width="5%">{{ income.id }}</td>
+                      <td width="15%">{{ income.registrationDate.date }}</td>
+                      <td width="15%">{{ income.dateOfPayment.date }}</td>
+                      <td width="15%" align="right">{{ income.amount }} HUF</td>
+                      <td width="30%" align="left"><font size="2"><a href="{% url 'income_detail' pk=income.pk %}">{{ income.description }}</a></font></td>
+                      <td width="20%">{{ income.category }}</td>
+                    </tr>
+                    {% endfor %}    
+                  </tbody>                  
+                </table>
+              </div>
+            </div>
+          </div>
+
+      {% comment %} <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">REGISTRATION DATE</th>
+            <th scope="col">DATE OF PAYMENT</th>
+            <th scope="col">AMOUNT</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">CATEGORY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for income in incomes %}
+          <tr>
+            <td width="5%">{{ income.id }}</td>
+            <td width="15%">{{ income.registrationDate }}</td>
+            <td width="15%">{{ income.dateOfPayment }}</td>
+            <td width="10%">{{ income.amount }}</td>
+            <td width="35%"><a href="{% url 'income_detail' pk=income.pk %}">{{ income.description }}</a></td>
+            <td width="20%">{{ income.category }}</td>
+          </tr>
+        {% endfor %}    
+        </tbody>
+      </table> {% endcomment %}
+   
+{% endblock %}

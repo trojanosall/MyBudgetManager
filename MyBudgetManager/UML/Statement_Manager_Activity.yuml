@@ -1,0 +1,10 @@
+// {type:activity}
+// {generate:true}
+
+(start)-><d1> Statement Directory exist-><d2> New XML file exist->(Insert New XML file to DB)->(Setting new status for XML file / Trigger for BudgetManager)->(END)
+<d1> Delegated Statement Directory is NOT exist->(END)
+<d2> There is NOT new XML file ->(END)
+
+
+
+

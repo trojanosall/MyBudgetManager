@@ -1,0 +1,97 @@
+{% extends 'incomeApp/base.html' %}
+
+{% block content %}
+    <h1>Edit Income Element</h1>
+    {% comment %} <form method="POST" action="{{ income_edit }}" class="form-horizontal">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form> {% endcomment %}
+
+    <form class="form-horizontal" method="POST" action="{{ income_edit }}" style="width: 200%" >
+        {% csrf_token %}
+        <div class="card">
+            {% comment %} <div class="card-header">
+                <strong>Edit Income Element</strong>
+            </div> {% endcomment %}
+            <div class="card-body">
+                {% for field in form.visible_fields %}
+                <b>{{ field.label }}</b>
+                {% comment %} <input class="form-control is-invalid income_property_theme" id="{{ field.html_name }}"
+                                                    type="{{ field.field.widget.input_type }}"
+                                                    placeholder="{{ field.help_text }}" name="{{ field.html_name }}"
+                                                    value="{{ field.value|default:"" }}"> {% endcomment %}
+                {% if field.label == "Description" %}
+                <textarea 
+                        class="form-control is-invalid description_income_edit income_property_theme"                        
+                        id="{{ field.html_name }}"                        
+                        name="{{ field.html_name }}"
+                        style="height: 240px"
+                        value="">{{ field.value|default:"" }} </textarea>
+                {% else %}
+                <input class="form-control is-invalid income_property_theme" id="{{ field.html_name }}"
+                                                    type="{{ field.field.widget.input_type }}"
+                                                    placeholder="{{ field.help_text }}" name="{{ field.html_name }}"
+                                                    value="{{ field.value|default:"" }}">
+                {% comment %} <textarea 
+                        class="form-control is-invalid income_property_theme"                        
+                        id="{{ field.html_name }}"                        
+                        name="{{ field.html_name }}"
+                        value="">{{ field.value|default:"" }} </textarea> {% endcomment %}
+                {% endif %}
+
+                {% endfor %}
+
+                {% comment %} {{ form.as_p }} {% endcomment %}
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+
+
+    {% comment %} <form method="POST" action="{{ income_edit }}" class="list-group">{% csrf_token %}
+        <ul>
+            <li><label for="{{ field.registrationDate.id_for_label }}">Registration Date:</label> <input id="{{ field.registrationDate.id_for_label }}" name="{{ field.registrationDate.id_for_label }}" type="{{ field.field.widget.input_type }}" value="{{ field.registrationDate.id_for_label }}" /></li>
+            <li><label for="id_dateOfPayment">Date Of Payment:</label> <input id="id_dateOfPayment" name="dateOfPayment" type="text" value="2019-02-04 01:00:00" /></li>
+            <li><label for="id_amount">Amount:</label> <input id="id_amount" name="amount" type="number" value="578" /></li>
+            <li><label for="id_description">Description:</label> <textarea id="id_description" cols="40" name="description" rows="10">JOVAIRAS SNKFHH8005551597
+                    HS-Szamlavezetesi dijkedvezmeny
+                    ONLHSFHH8LAKSAG H032
+                    Erteknap: 2019.02.04</textarea> <span class="helptext">Short description about income item</span></li>
+            <li><label for="id_category">Category:</label> <input id="id_category" maxlength="35" name="category" type="text" value="Interest Income and Other Revenue From Bank" /></li>
+        </ul>
+        <p><button class="btn btn-primary" type="submit">Save</button></p>
+
+
+
+    </form>
+
+    <h1>TEST</h1>
+
+    <p>Registration date: {{ income.registrationDate }}</p>
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>REGISTRATION DATE</th>
+                <th>DATE OF PAYMENT</th>
+                <th>AMOUNT</th>
+                <th>DESCRIPTION</th>
+                <th>CATEGORY</th>
+            </tr>
+            </thead>
+            <tbody>
+             
+            <tr>
+                <td width="5%">{{ income.id }}</td>
+                <td width="15%">{{ income.registrationDate.date }}</td>
+                <td width="15%">{{ income.dateOfPayment.date }}</td>
+                <td width="15%" align="right">{{ income.amount }} HUF</td>
+                <td width="30%" align="left"> <font size="2">{{ income.description }}</font></td>
+                <td width="20%">{{ income.category }}</td>
+            </tr>
+
+            </tbody>                  
+        </table> {% endcomment %}
+{% endblock %}
+    

@@ -1,0 +1,4 @@
+// {type:activity}
+// {generate:true}
+
+(start)->(GET New XML Files List)->(GET Path of XML file)->(Create XML Parser Tree)->(Create XML Parser Root)->(INVITE ParserFromXMLToDataBase funcion)->(SET XML file Status to Zero in DB)->(end)

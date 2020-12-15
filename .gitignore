@@ -132,7 +132,4 @@ dmypy.json
 *.csv
 *.xml
 *.txt
-
-# Folder extensions
-**/FinancialStatementDirectory
-**/Debug_And_Info
+!ToDo.txt
